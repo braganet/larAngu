@@ -39,18 +39,10 @@ class ClientController extends Controller
         $cliente->address = Input::get('address');
         $cliente->obs = Input::get('obs');
 
-        return $cliente->save();
+        $cliente->save();
 
         /*
-         * está apresentando dois erros nesta função:
-         * 1º: Esta fazendo atualização normal nos dados, porém ocorre um erro apos a atualização:
-         * "Whoops, looks like something went wrong.
-
-            1/1
-            UnexpectedValueException in Response.php line 403:
-            The Response content must be a string or object implementing __toString(), "boolean" given."
-
-         * Outro erro: o campo: created_at está sendo atualizado juntamente.
+         * Um erro: o campo: created_at está sendo atualizado juntamente.
          * */
     }
 
