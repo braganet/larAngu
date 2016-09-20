@@ -21,7 +21,13 @@ class ClientController extends Controller
     }
     public function show($id)
     {   // R Selecionando campos no banco.
-        return Client::find($id);
+        $showClient = Client::find($id);
+        if ($showClient){
+           return $showClient;
+        }else{
+            return response()->json("Não há cliente cliente cadastrado com esses dados");
+        }
+//        return Client::find($id);
     }
     public function update(Request $request, $id)
     {
