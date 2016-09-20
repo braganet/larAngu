@@ -27,7 +27,6 @@ class ClientController extends Controller
         }else{
             return response()->json("Não há cliente cliente cadastrado com esses dados");
         }
-//        return Client::find($id);
     }
     public function update(Request $request, $id)
     {
